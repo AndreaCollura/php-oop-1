@@ -13,6 +13,16 @@ class Movies
     public $image;
 
 
+
+    private $flags = [
+        'en',
+        'it',
+        'de',
+        'fr'
+
+    ];
+
+
     public function __construct($title, $original_title, $nationality, $date, $vote, $image)
     {
 
@@ -25,6 +35,14 @@ class Movies
 
         // $this->vote = $vote;
 
+    }
+
+
+    public function getFlag()
+    {
+        if(in_array($this->nationality, $this->flags)) {
+            return "<img src='img/$this->nationality.png' alt='$this->nationality'>";
+        }
     }
 
 }

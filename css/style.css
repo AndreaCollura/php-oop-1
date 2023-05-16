@@ -1,4 +1,6 @@
 body{
-    background-image: url(https://e1.pxfuel.com/desktop-wallpaper/609/441/desktop-wallpaper-plain-color-backgrounds-group-plain-colour-background.jpg);
+    background-image: url(https://e1.pxfuel.com/desktop-wallpaper/609/441/desktop-wallpaper-plain-color-backgrounds-group-plain-colour-background.jpg)!important;
+    background-repeat: no-repeat;
+    background-size: cover;
     
 }

@@ -4,6 +4,8 @@
 
 include __DIR__ . '/Models/Movie.php';
 
+
+
 $movies = [
     new Movies("Il Padrino", "The Godfather", 'en', '1972-03-24', 9.2 , 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/r4gnMXoY1efvaolNDjn3nj4046S.jpg'),
     new Movies("Via Col Vento", "Gone With The Wind", 'en', '1939-12-15', 8.6, 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/xRyW60TXvX7Q2HSbpz8nZxKaTkL.jpg'),
@@ -18,6 +20,9 @@ $movies = [
 
 ];
 
+/* var_dump($movies); */
+
+
 
 
 
@@ -29,13 +34,13 @@ include './partials/template/header.php';
 <div class="d-flex gap-3 flex-wrap">
     <?php foreach ($movies as $movie) { ?>
         <div class="card mb-5" style="width: 18rem;">
-            <img class="card-img-top" src="<?php echo $movie->image ?>" alt="Card image cap">
+            <img class="card-img-top" src="<?php echo $movie->image ?>" alt="<?php echo $movie->title ?>">
             <div class="card-body">
                 <h5 class="card-title text-center pb-4 fw-bold"><?php echo "$movie->title" ?></h5>
-                <p class="card-text fw-bold">Original Title: <?php echo "$movie->original_title" ?></p>
-                <p class="card-text fw-bold">Language: <?php echo "$movie->nationality" ?> </p>
-                <p class="card-text fw-bold">Date: <?php echo "$movie->date" ?> </p>
-                <p class="card-text fw-bold">Vote: <?php echo "$movie->vote" ?> </p>
+                <p class="card-text fw-bold">Titolo Originale: <?php echo "$movie->original_title" ?></p>
+                <p class="card-text fw-bold">Lingua: <?php echo $movie->getFlag() ?> </p>
+                <p class="card-text fw-bold">Data: <?php echo "$movie->date" ?> </p>
+                <p class="card-text fw-bold">Voto: <?php echo "$movie->vote" ?> </p>
                 
             </div>
         </div>
